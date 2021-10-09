@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.nytimes.R
 import com.example.nytimes.data.model.ResultsItem
+import com.example.nytimes.util.Utils
 
 class HomeAdapter(
     val results: List<ResultsItem>,
@@ -45,7 +46,7 @@ class HomeAdapter(
         holder.tvDate!!.setText(item.publishedDate)
 
         //ColorDrawable colorDrawable = new ColorDrawable(NYTimesUtils.getColor(R.color.colorPrimary));
-        Glide.with(holder.root!!.context).load(item.uri)
+        Glide.with(holder.root!!.context).load(Utils.getImageUrl(item.media))
             .apply(
                 RequestOptions
                     .circleCropTransform()
@@ -53,7 +54,7 @@ class HomeAdapter(
             )
             .into(holder.ivItem!!)
         holder.root!!.setOnClickListener { v: View? ->
-            listener.onItemClick(item.uri)
+            listener.onItemClick(item.url)
         }
     }
 

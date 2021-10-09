@@ -14,7 +14,7 @@ class HomeViewModel(private val applicationContext: Application,
                     private val repository: HomeRepository
 ):AndroidViewModel(applicationContext) {
     var key : String? = null
-    var isLoading = ObservableField(false)
+    var isLoading = ObservableField(true)
     lateinit var newsList : (NYTimesResponse) -> Unit
 fun mostPopular() {
     viewModel.isLoading.set(false)

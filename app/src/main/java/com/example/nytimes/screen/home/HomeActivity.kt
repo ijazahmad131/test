@@ -39,11 +39,10 @@ class HomeActivity : AppCompatActivity() {
         viewModel.isLoading.set(false)
         val adapter = HomeAdapter(results!!,object :HomeAdapter.ItemClickListener{
             override fun onItemClick(item: String) {
-                val intent: Intent = Intent(
-                    Intent.ACTION_VIEW,
-                    Uri.parse(item)
+                val intent: Intent = Intent(Intent.ACTION_VIEW, Uri.parse(item)
                 ).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 startActivity(intent)
+
             }
         })
         rvItems.setHasFixedSize(true)

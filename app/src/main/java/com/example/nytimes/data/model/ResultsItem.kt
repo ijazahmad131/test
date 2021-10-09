@@ -31,6 +31,8 @@ data class ResultsItem(@SerializedName("eta_id")
                        val desFacet: List<String>?,
                        @SerializedName("uri")
                        val uri: String = "",
+                       @SerializedName("url")
+                       val url: String = "",
                        @SerializedName("adx_keywords")
                        val adxKeywords: String = "",
                        @SerializedName("id")
