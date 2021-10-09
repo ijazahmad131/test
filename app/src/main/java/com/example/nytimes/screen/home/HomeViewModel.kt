@@ -14,10 +14,10 @@ class HomeViewModel(private val applicationContext: Application,
                     private val repository: HomeRepository
 ):AndroidViewModel(applicationContext) {
     var key : String? = null
-    var isLoading = ObservableField(true)
+    var isLoading = ObservableField(false)
     lateinit var newsList : (NYTimesResponse) -> Unit
 fun mostPopular() {
-    viewModel.isLoading.set(false)
+    viewModel.isLoading.set(true)
     key = "Ttc3o1CA6buGRKTksgDAIG5mp69ffrX7"
     repository.mostPopular(key?:"",object : HomeDataSource.RemoteDataSource.ApiCallback{
         override fun onSucces(response: NYTimesResponse) {
