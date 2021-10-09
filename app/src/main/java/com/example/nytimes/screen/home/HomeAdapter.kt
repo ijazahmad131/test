@@ -20,7 +20,7 @@ class HomeAdapter(
 ) : RecyclerView.Adapter<HomeAdapter.ViewHolder?>() {
 
     override fun getItemCount(): Int {
-        return 0
+        return results.size
     }
 
 
